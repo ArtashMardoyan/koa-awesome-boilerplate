@@ -69,8 +69,8 @@ package.json     | Saved npm modules versions and npm scripts
 Clone the repository
 
 ````bash
-git clone https://bitbucket.org/develandoo/sabx-dashboard
-cd sabx-dashboard
+git clone https://github.com/ArtashMardoyan/koa-awesome-boilerplate.git
+cd koa-awesome-boilerpalte
 ````
 
 Engine versions
@@ -126,7 +126,7 @@ You can also run this application as a [Docker](https://www.docker.com/) contain
 Build the Docker image
 
 ````bash
-docker build . -t sabx-dashboard
+docker build . -t koa-awesome-boilerpalte
 ````
 
 To list the docker images, run the following command
@@ -144,7 +144,7 @@ docker rmi $image_id
 "After" successfully creating the image you can run the container by following command
 
 ````bash
-docker run -d --name sabx-dashboard -p 3000:3000 connect-app . 
+docker run -d --name koa-awesome-boilerpalte -p 3000:3000 connect-app . 
 ````
 
 To list the running docker containers, run the following command
@@ -220,5 +220,5 @@ For transactions used some payment methods such as Stripe and PayPal
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=blue
 [linkedin-url]: https://linkedin.com/in/artash-mardoyan/
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://bitbucket.org/develandoo/sabx-dashboard/src/local/LICENSE.txt
+[license-url]: https://github.com/ArtashMardoyan/koa-awesome-boilerplate/blob/master/LICENSE.txt
 

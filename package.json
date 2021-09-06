@@ -1,5 +1,5 @@
 {
-  "name": "sabx-dashboard",
+  "name": "koa-awesome-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "license": "ISC",
@@ -17,11 +17,11 @@
   "contributors": [
     {
       "name": "Artash Mardoyan",
-      "email": "artash.mardoyan@sabx.com"
+      "email": "artashmardoyan@gmail.com"
     },
     {
       "name": "Gagik Alixanyan",
-      "email": "gagik.alixanyan@sabx.com "
+      "email": "alixanyangagik@gmail.com "
     }
   ],
   "repository": {

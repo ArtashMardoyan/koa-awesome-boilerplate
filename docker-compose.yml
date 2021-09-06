@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  sabx-dashboard:
+  koa-awesome-boilerplate:
     env_file:
       - .env
     build:
