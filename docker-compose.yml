@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  sabx-dashboard:
+    env_file:
+      - .env
+    build:
+      context: .
+      args:
+        STAGE: ${STAGE}
+    command: npm start
+    container_name: koa-awesome-boilerplate-${STAGE}
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
