@@ -30,15 +30,11 @@ module.exports = {
                 lastName: faker.name.firstName(),
                 firstName: faker.name.lastName(),
                 email: `user-${i}@mailinator.com`,
-                password: '$2a$07$jIHCC.pGmNoGzLIqy07MpOLmVEWkqAyejbTxTTSDATuQ7pjyT.7fG', // hunter
-                dob: `${_.random(1950, 1999)}-0${_.random(1, 9)}-0${_.random(1, 9)}`
+                password: '$2a$07$jIHCC.pGmNoGzLIqy07MpOLmVEWkqAyejbTxTTSDATuQ7pjyT.7fG' // hunter
             });
         }
 
-        await queryInterface.bulkInsert('user', users, {
-            ignoreDuplicates: true,
-            returning: true
-        });
+        await queryInterface.bulkInsert('user', users, { ignoreDuplicates: true, returning: true });
     },
 
     async down(queryInterface) {

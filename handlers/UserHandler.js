@@ -2,8 +2,8 @@ const _ = require('lodash');
 const validator = require('validator');
 const { Op, literal } = require('sequelize');
 
-const { DELETED, BLOCKED } = require('../data/lcp/UserStatus');
-const { ErrorMessages } = require('../constants');
+const { ErrorMessages, OrderField } = require('../constants');
+const { UserStatus } = require('../data/lcp');
 const { User } = require('../data/models');
 
 class UserHandler {
@@ -23,10 +23,12 @@ class UserHandler {
 
     static async actionIndex(ctx) {
         const { limit, offset, page: currentPage } = ctx.state.paginate;
-        const { sort } = ctx.query;
+        const { orderType, orderField } = ctx.query;
+
+        const orderKey = _.get(OrderField.USER, _.toUpper(_.snakeCase(orderField)), OrderField.USER.DEFAULT);
 
         const { rows: users, count: total } = await User.findAndCountAll({
-            order: [literal(`"firstName" ${sort}, "lastName" ${sort}, "id"`)],
+            order: [literal(`${orderKey} ${orderType}, ${OrderField.USER.ADDITIONAL}`)],
             offset,
             limit
         });
@@ -47,23 +49,20 @@ class UserHandler {
         const { email, password } = ctx.request.body;
 
         const user = await User.findOne({
-            where: { email: validator.normalizeEmail(_.trim(email)), status: { [Op.ne]: DELETED } }
+            where: { email: validator.normalizeEmail(_.trim(email)), status: { [Op.ne]: UserStatus.DELETED } }
         });
 
         if (_.isEmpty(user) || !(await user.validatePassword(password))) {
             return ctx.notFound(ErrorMessages.INVALID_CREDENTIALS);
-        } else if (user.status === BLOCKED) {
+        } else if (user.status === UserStatus.BLOCKED) {
             return ctx.forbidden(ErrorMessages.ACCOUNT_IS_DEACTIVATED);
         }
 
-        return ctx.ok({
-            user: await User.scope({ method: ['full', user.id] }).findByPk(user.id),
-            token: user.generateToken()
-        });
+        return ctx.ok({ user, token: user.generateToken() });
     }
 
     static async actionUpdate(ctx) {
-        const userFields = ['firstName', 'lastName', 'gender'];
+        const userFields = ['firstName', 'lastName'];
         const { id: userId } = ctx.state.user;
         const { body } = ctx.request;
 

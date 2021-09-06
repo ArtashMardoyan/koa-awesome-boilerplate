@@ -10,7 +10,6 @@ module.exports = {
     // ##### L #####
     LOCATION_REQUIRED: 'err_location_required',
     // ##### I #####
-    INVALID_LINK: '404',
     INVALID_TYPE: 'err_invalid_type',
     IDS_REQUIRED: 'err_ids_required',
     INVALID_CODE: 'err_invalid_code',

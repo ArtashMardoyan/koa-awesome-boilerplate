@@ -6,7 +6,7 @@ module.exports = {
     templates: {
         errorMessage: {
             templateId: 'f53e7065-16f4-488d-88fb-118eb4a250a1',
-            subject: 'GLOBY MAP::API ERROR'
+            subject: 'KOA-AWESOME-BOILERPLATE::API ERROR'
         }
     }
 };
