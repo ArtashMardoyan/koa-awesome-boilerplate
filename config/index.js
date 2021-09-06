@@ -1,11 +1,13 @@
 require('dotenv').config();
 
+const validation = require('./validation');
 const seedData = require('./seedData');
 const mailer = require('./mailer');
 
 module.exports = {
     mailer,
     seedData,
+    validation,
     PORT: process.env.PORT,
     HOST: process.env.HOST,
     STAGE: process.env.STAGE,

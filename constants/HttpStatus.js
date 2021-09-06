@@ -54,7 +54,7 @@ statusCodes[(exports.HTTP_VERSION_NOT_SUPPORTED = 505)] = 'HTTP Version Not Supp
 statusCodes[(exports.INSUFFICIENT_STORAGE = 507)] = 'Insufficient Storage';
 statusCodes[(exports.NETWORK_AUTHENTICATION_REQUIRED = 511)] = 'Network Authentication Required';
 
-exports.getStatusText = function(statusCode) {
+exports.getStatusText = function (statusCode) {
     if (statusCodes.hasOwnProperty(statusCode)) {
         return statusCodes[statusCode];
     } else {
@@ -62,8 +62,8 @@ exports.getStatusText = function(statusCode) {
     }
 };
 
-exports.getStatusCode = function(reasonPhrase) {
-    for (let key in statusCodes) {
+exports.getStatusCode = function (reasonPhrase) {
+    for (const key in statusCodes) {
         if (statusCodes[key] === reasonPhrase) {
             return parseInt(key, 10);
         }
