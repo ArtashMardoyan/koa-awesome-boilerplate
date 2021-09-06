@@ -1,16 +1,8 @@
-SABX DASHBOARD
+Koa-awesome-boilerplate
 ====================
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![MIT License][license-shield]][license-url]
-
-[![Alt text][sabx-shield]][sabx-url]
-
-### Digital Selling and Buying Platform for CPG Companies
-
-__SABX enables you to create a virtual ecosystem for doing business with whom you want, when you want.__                            
-__Connections are private and permission-based, and it’s easy to invite anyone inside or outside your organization.__                       
-__Simply ask to connect. Recipients accept or deny the connection. You control the access.__
 
 -------------------------------------------
 
@@ -226,9 +218,7 @@ We're using Cloud computing with the AWS services
 For transactions used some payment methods such as Stripe and PayPal
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=blue
-[linkedin-url]: https://www.linkedin.com/company/sabx/
+[linkedin-url]: https://linkedin.com/in/artash-mardoyan/
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://bitbucket.org/develandoo/sabx-dashboard/src/local/LICENSE.txt
-[sabx-shield]: https://sabx-backend-prod.s3.amazonaws.com/static/logo-new.png
-[sabx-url]: https://www.sabx.com
 
